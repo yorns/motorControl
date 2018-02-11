@@ -12,7 +12,7 @@ int main()
 
     SteeringControl steeringControl(service);
 
-    client.receiveHandler([&steeringControl](const std::string& nick, const std::string& msg){ steeringControl.cmdHandler(msg[0]);}  );
+    client.recvHandler([&steeringControl](const std::string& nick, const std::string& msg){ steeringControl.cmdHandler(msg[0]);}  );
 
     service.run();
 }
