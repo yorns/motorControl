@@ -1,0 +1,15 @@
+[Unit]
+Description=Motor Controller
+Requires=snc-broker.service
+After=snc-broker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/motorControl
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
